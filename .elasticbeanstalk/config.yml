@@ -1,2 +1,5 @@
+branch-defaults:
+  develop:
+    environment: To-Do-Develop
 global:
   profile: eb-cli
