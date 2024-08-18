@@ -25,9 +25,9 @@ SECRET_KEY = '8)810zj@#^2xp=1=2rkozbv8#)gub6m1a^9qf&)d-9&x9*c2a_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["http://to-do-develop.eba-apth3uqz.us-east-1.elasticbeanstalk.com/",
-                 "http://to-do-stage.eba-apth3uqz.us-east-1.elasticbeanstalk.com/",
-                 "http://to-do-prod.eba-apth3uqz.us-east-1.elasticbeanstalk.com/",]
+ALLOWED_HOSTS = ["to-do-develop.eba-apth3uqz.us-east-1.elasticbeanstalk.com",
+                 "to-do-stage.eba-apth3uqz.us-east-1.elasticbeanstalk.com",
+                 "to-do-prod.eba-apth3uqz.us-east-1.elasticbeanstalk.com"]
 
 
 # Application definition
