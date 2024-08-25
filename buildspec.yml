@@ -25,9 +25,6 @@ phases:
       - coverage report -m  
       - coverage xml -o coverage.xml
       - echo Build completed on `date`
-
-  post_tests:
-    commands:
     # Fail the build if code coverage is less than 80%
       - bash -c "if [[ $(coverage report -m --fail-under=80 | tail -n 1 | awk '{print $4}') == '100%' ]]; then echo 'Code coverage is 100%'; else echo 'Code coverage is less than 80%'; exit 1; fi"
 
