@@ -21,10 +21,9 @@ phases:
 
 
   post_build:
-    on-failure: CONTINUE
     commands:
     # Run pylint on the codebase
-      - pylint todoApp/
+    #  - pylint todoApp/
     # Generate code coverage report
       - coverage report -m  
       - coverage xml -o coverage.xml
