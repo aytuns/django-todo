@@ -31,5 +31,5 @@ phases:
 
 artifacts:
   files:
-    - .ebextensions/**/*
+    #- .ebextensions/**/*
     - coverage.xml
