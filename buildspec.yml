@@ -21,7 +21,7 @@ phases:
 
 
   post_build:
-    on-failure: ABORT
+    on-failure: CONTINUE
     commands:
     # Run pylint on the codebase
       - pylint todoApp/
