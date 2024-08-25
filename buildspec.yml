@@ -1,0 +1,34 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - pip install -r requirements.txt
+
+  pre_build:
+    commands:
+      - pylint todoApp/
+
+  build:
+    commands:
+      - python manage.py makemigrations
+      - python manage.py migrate  
+      - python manage.py test 
+      - coverage run manage.py test
+
+  post_build:
+    commands:
+    # Generate code coverage report
+      - coverage report -m  
+      - coverage xml -o coverage.xml
+
+  post_tests:
+    commands:
+    # Fail the build if code coverage is less than 80%
+      - bash -c "if [[ $(coverage report -m --fail-under=80 | tail -n 1 | awk '{print $4}') == '100%' ]]; then echo 'Code coverage is 100%'; else echo 'Code coverage is less than 80%'; exit 1; fi"
+
+artifacts:
+  files:
+    - coverage.xml
