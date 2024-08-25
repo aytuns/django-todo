@@ -10,7 +10,6 @@ phases:
   pre_build:
     commands:
       - echo Build started on `date`
-      - pylint todoApp/
 
   build:
     commands:
@@ -21,6 +20,8 @@ phases:
 
   post_build:
     commands:
+    # Run pylint on the codebase
+      - pylint todoApp/
     # Generate code coverage report
       - coverage report -m  
       - coverage xml -o coverage.xml
